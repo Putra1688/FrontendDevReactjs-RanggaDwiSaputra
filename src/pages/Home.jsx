@@ -9,6 +9,7 @@ const Home = () => {
     const [filterOpen, setFilterOpen] = useState(false);
     const [filterPrice, setFilterPrice] = useState("");
     const [filterCategory, setFilterCategory] = useState("");
+    const [showMobileFilters, setShowMobileFilters] = useState(false);
 
     const API_URL = "https://69b2479fe06ef68ddd948048.mockapi.io/api/v1/restaurant"
 
@@ -59,69 +60,85 @@ const Home = () => {
 
             <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-16">
                 {/* Filter Navigation - Glassmorphism */}
-                <div className="glass-morphism rounded-2xl md:rounded-3xl shadow-xl p-5 md:p-8 sticky top-4 md:top-6 z-10 animate-slide-up">
-                    <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 md:gap-8">
-                        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 flex-grow">
-                            <div className="flex items-center gap-4 shrink-0">
-                                <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">Filter By:</span>
-
-                                <label className="group flex items-center gap-3 text-sm font-bold cursor-pointer transition-colors hover:text-brand-600 whitespace-nowrap">
-                                    <div className={`w-9 h-5 rounded-full relative transition-colors ${filterOpen ? 'bg-brand-600' : 'bg-slate-200'}`}>
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            checked={filterOpen}
-                                            onChange={(e) => setFilterOpen(e.target.checked)}
-                                        />
-                                        <div className={`absolute top-0.5 left-0.5 bg-white w-4 h-4 rounded-full shadow-sm transition-transform ${filterOpen ? 'translate-x-4' : ''}`}></div>
-                                    </div>
-                                    Open Now
-                                </label>
-                            </div>
-
-                            <div className="h-px md:h-8 w-full md:w-px bg-slate-200/60"></div>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:flex md:items-center md:gap-8 flex-grow">
-                                <div className="relative group/select">
-                                    <select
-                                        value={filterPrice}
-                                        onChange={(e) => setFilterPrice(e.target.value)}
-                                        className="w-full text-sm font-bold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-2 md:py-1 outline-none cursor-pointer transition-all appearance-none pr-6"
-                                    >
-                                        <option value="">Price Range</option>
-                                        <option value="$">$ (Affordable)</option>
-                                        <option value="$$">$$ (Moderate)</option>
-                                        <option value="$$$">$$$ (Expensive)</option>
-                                        <option value="$$$$">$$$$ (Luxury)</option>
-                                    </select>
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-[10px]">▼</div>
-                                </div>
-
-                                <div className="relative group/select">
-                                    <select
-                                        value={filterCategory}
-                                        onChange={(e) => setFilterCategory(e.target.value)}
-                                        className="w-full text-sm font-bold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-2 md:py-1 outline-none cursor-pointer transition-all appearance-none pr-6"
-                                    >
-                                        <option value="">All Categories</option>
-                                        <option value="Japanese">Japanese</option>
-                                        <option value="Seafood">Seafood</option>
-                                        <option value="Italian">Italian</option>
-                                        <option value="Thai">Thai</option>
-                                        <option value="American">American</option>
-                                        <option value="Indonesian">Indonesian</option>
-                                    </select>
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-[10px]">▼</div>
-                                </div>
-                            </div>
+                <div className="glass-morphism rounded-2xl md:rounded-3xl shadow-xl p-4 md:p-8 sticky top-4 md:top-6 z-30 animate-slide-up">
+                    {/* Mobile Toggle Button */}
+                    <button
+                        onClick={() => setShowMobileFilters(!showMobileFilters)}
+                        className="xl:hidden w-full flex items-center justify-between px-4 py-2 border border-brand-900/10 rounded-xl bg-white/50 mb-0"
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-[10px] font-black uppercase tracking-widest text-brand-900">Filters</span>
+                            {(filterOpen || filterPrice || filterCategory) && (
+                                <span className="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
+                            )}
                         </div>
+                        <span className={`text-xs transition-transform duration-300 ${showMobileFilters ? 'rotate-180' : ''}`}>▼</span>
+                    </button>
 
-                        <button
-                            onClick={handleClearAll}
-                            className="w-full xl:w-auto px-6 py-3 md:p-0 rounded-xl bg-slate-100 md:bg-transparent text-[10px] font-black text-slate-500 hover:text-brand-600 uppercase tracking-[0.2em] transition-all active:scale-95"
-                        >
-                            Reset Filters
-                        </button>
+                    <div className={`overflow-hidden transition-all duration-500 xl:max-h-none ${showMobileFilters ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 xl:mt-0 opacity-0 xl:opacity-100'}`}>
+                        <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 md:gap-8">
+                            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 flex-grow">
+                                <div className="flex items-center gap-4 shrink-0">
+                                    <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">Filter By:</span>
+
+                                    <label className="group flex items-center gap-3 text-sm font-bold cursor-pointer transition-colors hover:text-brand-600 whitespace-nowrap">
+                                        <div className={`w-9 h-5 rounded-full relative transition-colors ${filterOpen ? 'bg-brand-600' : 'bg-slate-200'}`}>
+                                            <input
+                                                type="checkbox"
+                                                className="hidden"
+                                                checked={filterOpen}
+                                                onChange={(e) => setFilterOpen(e.target.checked)}
+                                            />
+                                            <div className={`absolute top-0.5 left-0.5 bg-white w-4 h-4 rounded-full shadow-sm transition-transform ${filterOpen ? 'translate-x-4' : ''}`}></div>
+                                        </div>
+                                        Open Now
+                                    </label>
+                                </div>
+
+                                <div className="h-px md:h-8 w-full md:w-px bg-slate-200/60"></div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:flex md:items-center md:gap-8 flex-grow">
+                                    <div className="relative group/select">
+                                        <select
+                                            value={filterPrice}
+                                            onChange={(e) => setFilterPrice(e.target.value)}
+                                            className="w-full text-sm font-bold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-2 md:py-1 outline-none cursor-pointer transition-all appearance-none pr-6"
+                                        >
+                                            <option value="">Price Range</option>
+                                            <option value="$">$ (Affordable)</option>
+                                            <option value="$$">$$ (Moderate)</option>
+                                            <option value="$$$">$$$ (Expensive)</option>
+                                            <option value="$$$$">$$$$ (Luxury)</option>
+                                        </select>
+                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-[10px]">▼</div>
+                                    </div>
+
+                                    <div className="relative group/select">
+                                        <select
+                                            value={filterCategory}
+                                            onChange={(e) => setFilterCategory(e.target.value)}
+                                            className="w-full text-sm font-bold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-2 md:py-1 outline-none cursor-pointer transition-all appearance-none pr-6"
+                                        >
+                                            <option value="">All Categories</option>
+                                            <option value="Japanese">Japanese</option>
+                                            <option value="Seafood">Seafood</option>
+                                            <option value="Italian">Italian</option>
+                                            <option value="Thai">Thai</option>
+                                            <option value="American">American</option>
+                                            <option value="Indonesian">Indonesian</option>
+                                        </select>
+                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-[10px]">▼</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                onClick={handleClearAll}
+                                className="w-full xl:w-auto px-6 py-3 md:p-0 rounded-xl bg-slate-100 md:bg-transparent text-[10px] font-black text-slate-500 hover:text-brand-600 uppercase tracking-[0.2em] transition-all active:scale-95"
+                            >
+                                Reset Filters
+                            </button>
+                        </div>
                     </div>
                 </div>
 
