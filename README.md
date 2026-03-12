@@ -1,16 +1,80 @@
-# React + Vite
+# Restaurant Discovery App - Technical Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium restaurant discovery application built with React, Vite, and Tailwind CSS v4. This project was developed as part of the Frontend Developer Internship technical assessment.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Live Data API**: Integrated with [MockAPI.io](https://mockapi.io) for real-time data fetching.
+- **Advanced Filtering**: Filter by "Open Now" status, Price Range ($ - $$$$), and Categories.
+- **Premium UI/UX**: 
+  - Modern typography using *Plus Jakarta Sans* and *Playfair Display*.
+  - Dark-themed Hero section for a cinematic feel.
+  - Glassmorphism effects on navigation and filters.
+  - Immersive detail pages with hero banners and stylized reviews.
+- **Interactive Maps**: Integrated Google Maps Embed to show restaurant locations dynamically.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
+- **Performance**: Built with Vite 7 for lightning-fast development and optimized production builds.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Framework**: React 19
+- **Bundler**: Vite 7
+- **Styling**: Tailwind CSS v4.0.0
+- **Routing**: React Router 7
+- **HTTP Client**: Axios
+- **API**: MockAPI.io
+- **Fonts**: Google Fonts (Plus Jakarta Sans, Playfair Display)
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- **Node.js**: v18.x or higher
+- **npm**: v9.x or higher
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd FrontendDevReactjs-RanggaDwiSaputra
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Project
+
+To start the development server:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`.
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/     # Reusable UI components (RestaurantCard, etc.)
+├── pages/          # Main application pages (Home, Detail)
+├── services/       # API configuration and data management
+├── App.jsx         # Main routing and layout
+└── main.jsx        # Project entry point
+```
+
+## 📝 Assessment Deliverables
+
+- [x] Functional Requirements (Filter, Detail, Ratings, Reviews)
+- [x] Responsive Design (Desktop & Mobile)
+- [x] Clean and Readable Code
+- [x] Documentation (README.md)
+- [x] API Integration (MockAPI.io)
+
+---
+Developed by **Rangga Dwi Saputra**
