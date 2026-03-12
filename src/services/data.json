@@ -1,0 +1,164 @@
+[
+  {
+    "id": "1",
+    "name": "Sushi Hiro",
+    "rating": 5,
+    "category": "Japanese",
+    "price": "$$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1579871494447-9811cf80d66c"],
+    "reviews": [
+      { "name": "Rangga", "rating": 5, "text": "Sushi paling fresh!" },
+      { "name": "Dwi", "rating": 4, "text": "Tempatnya nyaman." }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Seafood King",
+    "rating": 3,
+    "category": "Seafood",
+    "price": "$$",
+    "isOpen": false,
+    "photos": ["https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2"],
+    "reviews": []
+  },
+  {
+    "id": "3",
+    "name": "Pasta Bravo",
+    "rating": 4,
+    "category": "Italian",
+    "price": "$$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1546548970-71785318a17b"],
+    "reviews": [{ "name": "Saputra", "rating": 5, "text": "Carbonara terbaik!" }]
+  },
+  {
+    "id": "4",
+    "name": "Thai Palace",
+    "rating": 2,
+    "category": "Thai",
+    "price": "$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1559339352-11d035aa65de"],
+    "reviews": []
+  },
+  {
+    "id": "5",
+    "name": "Burger Barn",
+    "rating": 4,
+    "category": "American",
+    "price": "$$",
+    "isOpen": false,
+    "photos": ["https://images.unsplash.com/photo-1568901346375-23c9450c58cd"],
+    "reviews": [{ "name": "Budi", "rating": 4, "text": "Porsinya besar!" }]
+  },
+  {
+    "id": "6",
+    "name": "Steak House",
+    "rating": 5,
+    "category": "American",
+    "price": "$$$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1546241072-48010ad28c2c"],
+    "reviews": []
+  },
+  {
+    "id": "7",
+    "name": "Dimsum Joy",
+    "rating": 3,
+    "category": "Chinese",
+    "price": "$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1563245372-f21724e3856d"],
+    "reviews": []
+  },
+  {
+    "id": "8",
+    "name": "Taco Loco",
+    "rating": 4,
+    "category": "Mexican",
+    "price": "$$",
+    "isOpen": false,
+    "photos": ["https://images.unsplash.com/photo-1565299585323-38d6b0865b47"],
+    "reviews": []
+  },
+  {
+    "id": "9",
+    "name": "Warung Padang Sederhana",
+    "rating": 5,
+    "category": "Indonesian",
+    "price": "$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1606491956689-2ea866880c84"],
+    "reviews": [
+      { "name": "Andi", "rating": 5, "text": "Rendangnya juara dunia!" },
+      { "name": "Siti", "rating": 5, "text": "Sambal ijonya mantap." }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Le Petit Paris",
+    "rating": 4,
+    "category": "French",
+    "price": "$$$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1550966841-3ee5ad63384f"],
+    "reviews": [{ "name": "Marie", "rating": 4, "text": "Croissant-nya sangat otentik." }]
+  },
+  {
+    "id": "11",
+    "name": "K-Bab Grill",
+    "rating": 4,
+    "category": "Korean",
+    "price": "$$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1590301157890-4810ed352733"],
+    "reviews": [
+      { "name": "Joon", "rating": 5, "text": "Kimchi-nya segar sekali." },
+      { "name": "Rina", "rating": 3, "text": "Antriannya terlalu panjang." }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Ramen Nagi",
+    "rating": 5,
+    "category": "Japanese",
+    "price": "$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1569718212165-3a8278d5f624"],
+    "reviews": [{ "name": "Eko", "rating": 5, "text": "Kuahnya kental dan gurih." }]
+  },
+  {
+    "id": "13",
+    "name": "The Green Garden",
+    "rating": 4,
+    "category": "Vegetarian",
+    "price": "$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1512621776951-a57141f2eefd"],
+    "reviews": []
+  },
+  {
+    "id": "14",
+    "name": "Istanbul Kebab",
+    "rating": 4,
+    "category": "Middle Eastern",
+    "price": "$",
+    "isOpen": false,
+    "photos": ["https://images.unsplash.com/photo-1561651823-34feb02250e4"],
+    "reviews": [{ "name": "Hassan", "rating": 4, "text": "Dagingnya juicy dan bumbunya meresap." }]
+  },
+  {
+    "id": "15",
+    "name": "Pizza Napoletana",
+    "rating": 5,
+    "category": "Italian",
+    "price": "$$$",
+    "isOpen": true,
+    "photos": ["https://images.unsplash.com/photo-1513104890138-7c749659a591"],
+    "reviews": [
+      { "name": "Bella", "rating": 5, "text": "Adonan pizzanya sangat lembut." },
+      { "name": "Luca", "rating": 5, "text": "Terbaik di kota ini!" }
+    ]
+  }
+]
