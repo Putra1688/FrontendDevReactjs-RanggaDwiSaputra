@@ -7,6 +7,8 @@
 
 LuxeEats adalah aplikasi web pencarian restoran premium yang dirancang untuk memberikan pengalaman navigasi yang elegan dan responsif. Aplikasi ini mengintegrasikan data real-time melalui REST API, sistem otentikasi simulasi, dan fitur ulasan dinamis.
 
+**Live Demo:** [https://luxeats.netlify.app](https://luxeats.netlify.app)
+
 **Repositori Proyek:** [https://github.com/Putra1688/FrontendDevReactjs-RanggaDwiSaputra](https://github.com/Putra1688/FrontendDevReactjs-RanggaDwiSaputra)
 
 ---
@@ -45,7 +47,7 @@ LuxeEats adalah aplikasi web pencarian restoran premium yang dirancang untuk mem
 - **Styling**: Tailwind CSS v4.0
 - **Navigation**: React Router v7
 - **HTTP Client**: Axios
-- **External API**: MockAPI.io
+- **External API**: MockAPI.io   
 - **Fonts**: Google Fonts (Plus Jakarta Sans, Playfair Display)
 
 ---
