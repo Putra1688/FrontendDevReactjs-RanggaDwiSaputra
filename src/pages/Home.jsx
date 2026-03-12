@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
 import RestaurantCard from '../components/RestaurantCard';
 
 const Home = () => {
@@ -40,73 +41,84 @@ const Home = () => {
 
     return (
         <div className="min-h-screen bg-slate-50">
+            <Navbar />
+
             {/* Hero Section */}
-            <div className="bg-brand-900 text-white pt-24 pb-32 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <h1 className="text-6xl md:text-8xl font-serif mb-6 leading-tight animate-fade-in">
-                        Discover <br />
-                        <span className="italic text-blue-400">Exquisite</span> Dining
+            <div className="relative h-[60vh] md:h-[70vh] bg-slate-900 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-40 scale-105 animate-slow-zoom"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+
+                <div className="relative z-10 text-center px-6 max-w-4xl animate-fade-in">
+                    <p className="text-blue-400 font-black tracking-[0.4em] uppercase text-[10px] md:text-xs mb-6">Discover the extraordinary</p>
+                    <h1 className="text-5xl md:text-8xl font-serif text-white mb-8 leading-[1.1] tracking-tight">
+                        Elevate Your <br />
+                        <span className="italic font-light opacity-80">Dining Experience</span>
                     </h1>
-                    <p className="text-slate-400 max-w-2xl text-lg md:text-xl font-light leading-relaxed">
-                        Exploration of taste and texture. Discover the finest restaurants curated for true food connoisseurs.
-                    </p>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 -mt-16">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 -mt-16">
                 {/* Filter Navigation - Glassmorphism */}
-                <div className="glass-morphism rounded-2xl shadow-xl p-8 sticky top-6 z-10 animate-slide-up">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
-                        <div className="flex flex-wrap items-center gap-8">
-                            <div className="flex items-center gap-4">
-                                <span className="text-xs uppercase tracking-widest font-bold text-slate-400">Filter By:</span>
+                <div className="glass-morphism rounded-2xl md:rounded-3xl shadow-xl p-5 md:p-8 sticky top-4 md:top-6 z-10 animate-slide-up">
+                    <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 md:gap-8">
+                        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 flex-grow">
+                            <div className="flex items-center gap-4 shrink-0">
+                                <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">Filter By:</span>
 
-                                <label className="group flex items-center gap-3 text-sm font-medium cursor-pointer transition-colors hover:text-brand-600">
-                                    <div className={`w-10 h-6 rounded-full relative transition-colors ${filterOpen ? 'bg-brand-600' : 'bg-slate-200'}`}>
+                                <label className="group flex items-center gap-3 text-sm font-bold cursor-pointer transition-colors hover:text-brand-600 whitespace-nowrap">
+                                    <div className={`w-9 h-5 rounded-full relative transition-colors ${filterOpen ? 'bg-brand-600' : 'bg-slate-200'}`}>
                                         <input
                                             type="checkbox"
                                             className="hidden"
                                             checked={filterOpen}
                                             onChange={(e) => setFilterOpen(e.target.checked)}
                                         />
-                                        <div className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform ${filterOpen ? 'translate-x-4' : ''}`}></div>
+                                        <div className={`absolute top-0.5 left-0.5 bg-white w-4 h-4 rounded-full shadow-sm transition-transform ${filterOpen ? 'translate-x-4' : ''}`}></div>
                                     </div>
                                     Open Now
                                 </label>
                             </div>
 
-                            <div className="h-8 w-px bg-slate-200 hidden md:block"></div>
+                            <div className="h-px md:h-8 w-full md:w-px bg-slate-200/60"></div>
 
-                            <select
-                                value={filterPrice}
-                                onChange={(e) => setFilterPrice(e.target.value)}
-                                className="text-sm font-semibold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-1 outline-none cursor-pointer transition-all"
-                            >
-                                <option value="">Price Range</option>
-                                <option value="$">$ (Affordable)</option>
-                                <option value="$$">$$ (Moderate)</option>
-                                <option value="$$$">$$$ (Expensive)</option>
-                                <option value="$$$$">$$$$ (Luxury)</option>
-                            </select>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:flex md:items-center md:gap-8 flex-grow">
+                                <div className="relative group/select">
+                                    <select
+                                        value={filterPrice}
+                                        onChange={(e) => setFilterPrice(e.target.value)}
+                                        className="w-full text-sm font-bold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-2 md:py-1 outline-none cursor-pointer transition-all appearance-none pr-6"
+                                    >
+                                        <option value="">Price Range</option>
+                                        <option value="$">$ (Affordable)</option>
+                                        <option value="$$">$$ (Moderate)</option>
+                                        <option value="$$$">$$$ (Expensive)</option>
+                                        <option value="$$$$">$$$$ (Luxury)</option>
+                                    </select>
+                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-[10px]">▼</div>
+                                </div>
 
-                            <select
-                                value={filterCategory}
-                                onChange={(e) => setFilterCategory(e.target.value)}
-                                className="text-sm font-semibold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-1 outline-none cursor-pointer transition-all"
-                            >
-                                <option value="">All Categories</option>
-                                <option value="Japanese">Japanese</option>
-                                <option value="Seafood">Seafood</option>
-                                <option value="Italian">Italian</option>
-                                <option value="Thai">Thai</option>
-                                <option value="American">American</option>
-                                <option value="Indonesian">Indonesian</option>
-                            </select>
+                                <div className="relative group/select">
+                                    <select
+                                        value={filterCategory}
+                                        onChange={(e) => setFilterCategory(e.target.value)}
+                                        className="w-full text-sm font-bold border-b-2 border-transparent focus:border-brand-600 bg-transparent py-2 md:py-1 outline-none cursor-pointer transition-all appearance-none pr-6"
+                                    >
+                                        <option value="">All Categories</option>
+                                        <option value="Japanese">Japanese</option>
+                                        <option value="Seafood">Seafood</option>
+                                        <option value="Italian">Italian</option>
+                                        <option value="Thai">Thai</option>
+                                        <option value="American">American</option>
+                                        <option value="Indonesian">Indonesian</option>
+                                    </select>
+                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 text-[10px]">▼</div>
+                                </div>
+                            </div>
                         </div>
 
                         <button
                             onClick={handleClearAll}
-                            className="text-[10px] font-bold text-slate-400 hover:text-brand-600 uppercase tracking-[0.2em] transition-colors"
+                            className="w-full xl:w-auto px-6 py-3 md:p-0 rounded-xl bg-slate-100 md:bg-transparent text-[10px] font-black text-slate-500 hover:text-brand-600 uppercase tracking-[0.2em] transition-all active:scale-95"
                         >
                             Reset Filters
                         </button>

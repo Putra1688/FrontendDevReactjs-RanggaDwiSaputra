@@ -1,80 +1,109 @@
-# Restaurant Discovery App - Technical Test
+# LuxeEats - Premium Restaurant Discovery 🍽️
 
-A premium restaurant discovery application built with React, Vite, and Tailwind CSS v4. This project was developed as part of the Frontend Developer Internship technical assessment.
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🚀 Features
+LuxeEats adalah aplikasi web pencarian restoran premium yang dirancang untuk memberikan pengalaman navigasi yang elegan dan responsif. Aplikasi ini mengintegrasikan data real-time melalui REST API, sistem otentikasi simulasi, dan fitur ulasan dinamis.
 
-- **Live Data API**: Integrated with [MockAPI.io](https://mockapi.io) for real-time data fetching.
-- **Advanced Filtering**: Filter by "Open Now" status, Price Range ($ - $$$$), and Categories.
-- **Premium UI/UX**: 
-  - Modern typography using *Plus Jakarta Sans* and *Playfair Display*.
-  - Dark-themed Hero section for a cinematic feel.
-  - Glassmorphism effects on navigation and filters.
-  - Immersive detail pages with hero banners and stylized reviews.
-- **Interactive Maps**: Integrated Google Maps Embed to show restaurant locations dynamically.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
-- **Performance**: Built with Vite 7 for lightning-fast development and optimized production builds.
+**Repositori Proyek:** [https://github.com/Putra1688/FrontendDevReactjs-RanggaDwiSaputra](https://github.com/Putra1688/FrontendDevReactjs-RanggaDwiSaputra)
 
-## 🛠️ Tech Stack
+---
 
-- **Framework**: React 19
-- **Bundler**: Vite 7
-- **Styling**: Tailwind CSS v4.0.0
-- **Routing**: React Router 7
+## ✨ Fitur Unggulan
+
+- **🌐 Integrasi Data Real-time**: Terhubung dengan REST API live ([MockAPI.io](https://mockapi.io)) menggunakan **Axios** dan React Hooks.
+- **🔐 Sistem Otentikasi Simulasi**: 
+  - Menggunakan **AuthContext** global untuk manajemen sesi.
+  - Login sebagai "Guest" hanya dengan memasukkan nama.
+  - Sesi login tersimpan secara lokal via **localStorage**.
+- **✍️ Fitur Ulasan Dinamis**: 
+  - Pengguna yang masuk dapat memberikan ulasan langsung ke MockAPI.
+  - Data ulasan dikirim menggunakan metode `PUT` dan tetap tersimpan saat halaman dimuat ulang.
+- **🔍 Sistem Filter Cerdas**: 
+  - Toggle "Open Now" untuk melihat restoran yang sedang buka.
+  - Filter rentang harga ($ hingga $$$$).
+  - Seleksi kategori kuliner yang dinamis.
+  - Tombol "Clear All" untuk mereset semua filter dengan cepat.
+- **💎 Estetika Premium**:
+  - **Tipografi**: Perpaduan *Plus Jakarta Sans* (sans-serif modern) dan *Playfair Display* (serif elegan).
+  - **Hero Section**: Desain gelap yang imersif dengan tipografi sinematik.
+  - **Glassmorphism**: Elemen UI transparan dengan efek blur pada navigasi dan filter.
+  - **Micro-animations**: Transisi hover yang halus, fade-in, dan skeleton loading.
+- **📱 Mobile-First & Responsif**: 
+  - Sistem grid 100% responsif.
+  - Layout filter yang dioptimalkan untuk perangkat layar sentuh.
+- **🗺️ Integrasi Peta Interaktif**: Menggunakan Google Maps Embed API yang otomatis mendeteksi lokasi berdasarkan nama restoran.
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Core**: React 19 (Functional Components & Hooks)
+- **State Management**: React Context API (untuk Auth & Global UI state)
+- **Styling**: Tailwind CSS v4.0
+- **Navigation**: React Router v7
 - **HTTP Client**: Axios
-- **API**: MockAPI.io
+- **External API**: MockAPI.io
 - **Fonts**: Google Fonts (Plus Jakarta Sans, Playfair Display)
 
-## 📦 Getting Started
+---
 
-### Prerequisites
+## 📦 Instalasi & Penggunaan
 
-- **Node.js**: v18.x or higher
-- **npm**: v9.x or higher
+### Prasyarat
+- **Node.js**: v18.x atau lebih tinggi
+- **npm**: v9.x atau lebih tinggi
 
-### Installation
+### Langkah-langkah Instalasi
 
-1. Clone the repository:
+1. **Clone Repositori**:
    ```bash
-   git clone [repository-url]
-   ```
-
-2. Navigate to the project directory:
-   ```bash
+   git clone https://github.com/Putra1688/FrontendDevReactjs-RanggaDwiSaputra.git
    cd FrontendDevReactjs-RanggaDwiSaputra
    ```
 
-3. Install dependencies:
+2. **Instal Dependensi**:
    ```bash
    npm install
    ```
 
-### Running the Project
+3. **Jalankan Aplikasi secara Lokal**:
+   ```bash
+   npm run dev
+   ```
+   *Aplikasi akan berjalan di alamat `http://localhost:5173`*
 
-To start the development server:
-```bash
-npm run dev
-```
-The application will be available at `http://localhost:5173`.
+### 🔑 Cara Mencoba Fitur Review
+Untuk mencoba fitur **Tambah Review**, kamu harus login terlebih dahulu:
+1. Klik tombol **Login** di pojok kanan atas Navbar.
+2. Masukkan nama kamu -> Klik **"Let's Explore"**.
+3. Pilih salah satu restoran dan scroll ke bawah untuk memberikan ulasan.
 
-## 📂 Project Structure
+---
+
+## 📂 Struktur Proyek
 
 ```text
 src/
-├── components/     # Reusable UI components (RestaurantCard, etc.)
-├── pages/          # Main application pages (Home, Detail)
-├── services/       # API configuration and data management
-├── App.jsx         # Main routing and layout
-└── main.jsx        # Project entry point
+├── components/   # Komponen UI (Navbar, Card, Modal, dll)
+├── context/      # State Management (AuthContext)
+├── pages/        # Halaman Utama (Home & Detail)
+├── services/     # Konfigurasi API
+└── assets/       # Gambar & Asset statis
 ```
 
-## 📝 Assessment Deliverables
-
-- [x] Functional Requirements (Filter, Detail, Ratings, Reviews)
-- [x] Responsive Design (Desktop & Mobile)
-- [x] Clean and Readable Code
-- [x] Documentation (README.md)
-- [x] API Integration (MockAPI.io)
-
 ---
-Developed by **Rangga Dwi Saputra**
+
+## 📄 Penilaian Teknis (Deliverables)
+
+| Kriteria | Deskripsi | Status |
+| :--- | :--- | :---: |
+| **API Integration** | Fetch data restaurant & Post reviews (PUT) | ✅ |
+| **Responsive Design** | Navigasi & Filter yang mobile-friendly | ✅ |
+| **Clean Code** | Penggunaan Hooks & Context API yang efisien | ✅ |
+| **UI/UX Polishing** | Penggunaan Glassmorphism & Premium Fonts | ✅ |
+| **Documentation** | README lengkap (Bahasa Indonesia) | ✅ |
+
+Project ini dikembangkan sebagai bagian dari **Technical Assessment Frontend Developer (React.js)**.
